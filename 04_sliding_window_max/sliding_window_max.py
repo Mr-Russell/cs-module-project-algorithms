@@ -4,9 +4,16 @@ Returns: a List of integers
 '''
 def sliding_window_max(nums, k):
     # Your code here
+    max_list = []
+    for i in range(len(nums) - (k - 1)):
+        arr = nums[i:(i+k)]
+        max_val = nums[i]
+        for n in arr:
+            if n > max_val:
+                max_val = n
+        max_list.append(max_val)
 
-    pass
-
+    return max_list
 
 if __name__ == '__main__':
     # Use the main function here to test out your implementation 
